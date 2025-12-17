@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Iwin Enterprises | Real Estate Navi Mumbai</title>
   
-  <meta name="description" content="Iwin Enterprises - Premier Real Estate Agency in Kamothe, Navi Mumbai. Specializing in luxury flats and commercial properties.">
+  <meta name="description" content="Iwin Enterprises - Premier Real Estate Agency in Kamothe, Navi Mumbai. Shop No. 2, Sanskurti Apartment, Sector 34.">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --bg: #0a0a0c;
       --card-bg: #16161a;
-      --accent: #d4af37;
+      --accent: #1e40af; /* Changed from Yellow to Blue */
       --text-main: #ffffff;
       --text-muted: #94a3b8;
       --border: rgba(255, 255, 255, 0.08);
@@ -21,7 +21,6 @@
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
     body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
     
-    /* Navigation */
     header { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(10, 10, 12, 0.85); backdrop-filter: blur(15px); border-bottom: 1px solid var(--border); }
     .nav { max-width: 1200px; margin: auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
     .logo { font-size: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #fff; text-decoration: none; }
@@ -29,64 +28,29 @@
     .nav-links a { margin-left: 25px; color: var(--text-muted); font-size: 14px; text-decoration: none; transition: 0.3s; }
     .nav-links a:hover { color: var(--accent); }
 
-    /* Hero Section with Video */
-    .hero { 
-      position: relative; 
-      height: 100vh; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      overflow: hidden; 
-      text-align: center;
-      background-color: #000; /* Fallback color */
-    }
-    .hero-video { 
-      position: absolute; 
-      top: 50%; 
-      left: 50%; 
-      min-width: 100%; 
-      min-height: 100%; 
-      width: auto; 
-      height: auto; 
-      transform: translate(-50%, -50%); 
-      object-fit: cover; 
-      z-index: -2; 
-    }
-    .hero-overlay { 
-      position: absolute; 
-      top: 0; 
-      left: 0; 
-      width: 100%; 
-      height: 100%; 
-      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)); 
-      z-index: -1; 
-    }
+    .hero { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; text-align: center; background-color: #000; }
+    .hero-video { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); object-fit: cover; z-index: -2; }
+    .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)); z-index: -1; }
     .hero-content { z-index: 1; padding: 0 20px; }
-    .hero-content h1 { font-size: clamp(32px, 8vw, 60px); line-height: 1.1; margin-bottom: 20px; text-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+    .hero-content h1 { font-size: clamp(32px, 8vw, 60px); line-height: 1.1; margin-bottom: 20px; }
     .hero-content h1 span { color: var(--accent); }
 
-    /* Buttons */
     .btn { padding: 14px 28px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.3s; display: inline-block; text-decoration: none; border: none; }
-    .btn-primary { background: var(--accent); color: #000; }
+    .btn-primary { background: var(--accent); color: #fff; }
     .btn-outline { border: 1px solid #fff; color: #fff; margin-left: 10px; backdrop-filter: blur(5px); }
-    .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3); }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(30, 64, 175, 0.4); }
 
-    /* Grid & Cards */
     section { padding: 80px 20px; max-width: 1200px; margin: auto; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
     .card { background: var(--card-bg); border-radius: 15px; overflow: hidden; border: 1px solid var(--border); transition: 0.3s; padding: 20px; }
     .card:hover { border-color: var(--accent); }
     .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px; }
 
-    /* Floating WhatsApp */
-    .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 8px 20px rgba(0,0,0,0.3); transition: 0.3s; }
-    .whatsapp-float:hover { transform: scale(1.1); }
+    .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
 
-    /* Popup */
     #leadPopup { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 2000; align-items: center; justify-content: center; backdrop-filter: blur(8px); }
     .popup-box { background: var(--card-bg); padding: 40px; border-radius: 20px; width: 90%; max-width: 400px; text-align: center; border: 1px solid var(--accent); }
     .popup-box input { width: 100%; padding: 15px; margin: 20px 0; background: #000; border: 1px solid var(--border); color: #fff; border-radius: 8px; outline: none; }
-    .popup-box input:focus { border-color: var(--accent); }
 
     @media (max-width: 600px) {
       .nav-links { display: none; }
@@ -109,9 +73,8 @@
 </header>
 
 <section class="hero">
-  <video autoplay muted loop playsinline class="hero-video">
+  <video autoplay muted loop playsinline webkit-playsinline preload="auto" class="hero-video">
     <source src="./hero-bg.mp4" type="video/mp4">
-    <source src="./hero-bg.mp4" type="video/quicktime">
   </video>
   <div class="hero-overlay"></div>
   <div class="hero-content">
@@ -125,37 +88,37 @@
 </section>
 
 <section id="properties">
-  <h2 style="text-align: center; font-size: 32px;">Featured Listings</h2>
+  <h2 style="text-align: center;">Featured Listings</h2>
   <div class="grid">
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=500&q=60" alt="Apartment">
+      <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=500&q=60">
       <h3>Modern 2BHK Kamothe</h3>
-      <p style="color:var(--accent); font-weight:700; font-size: 20px;">₹85 Lakhs +</p>
+      <p style="color:var(--accent); font-weight:700;">₹85 Lakhs +</p>
     </div>
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=500&q=60" alt="Commercial">
+      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=500&q=60">
       <h3>Shop / Office Space</h3>
-      <p style="color:var(--accent); font-weight:700; font-size: 20px;">Sector 34, Kamothe</p>
+      <p style="color:var(--accent); font-weight:700;">Sector 34, Kamothe</p>
     </div>
   </div>
 </section>
 
 <section id="contact" style="text-align: center;">
   <h2>Our Office</h2>
-  <div class="card" style="max-width: 600px; margin: 40px auto; border: 1px solid var(--accent); background: #1a1a20;">
-    <h3 style="font-size: 24px;">Iwin Enterprises</h3>
-    <p style="color: var(--text-muted); margin: 15px 0;">
+  <div class="card" style="max-width: 600px; margin: 40px auto; border: 1px solid var(--accent);">
+    <h3 style="margin-bottom: 10px;">Iwin Enterprises</h3>
+    <p style="color: var(--text-muted);">
       Shop No. 2, Sanskurti Apartment, Plot No. 13<br>
       Opposite Pratik Garden Building, Sector 34<br>
       Kamothe, Navi Mumbai, Maharashtra 410209
     </p>
-    <p style="margin-bottom: 20px; font-weight: 600; color: #fff;">📞 +91 98704 99334</p>
+    <p style="margin: 20px 0; font-weight: 600;">📞 +91 98704 99334</p>
     <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
       <a href="tel:+919870499334" class="btn btn-primary">Call Advisor</a>
-      <a href="https://maps.app.goo.gl/ChIJ41DfTd3D5zsRLO-C9rMOcCI" target="_blank" class="btn btn-outline">Get Directions</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Iwin+Enterprises+Kamothe" target="_blank" class="btn btn-outline">Get Directions</a>
     </div>
-    <p style="margin-top: 25px; font-size: 14px; color: var(--text-muted); border-top: 1px solid var(--border); pt: 15px;">
-      <strong>Hours:</strong> 10 AM - 8 PM (Closed Fridays)
+    <p style="margin-top: 25px; font-size: 13px; color: var(--text-muted);">
+      Open 10 AM - 8 PM (Closed Fridays)
     </p>
   </div>
 </section>
@@ -166,26 +129,23 @@
 
 <div id="leadPopup">
   <div class="popup-box">
-    <h3 style="color: var(--accent);">Property Deals</h3>
-    <p style="color: var(--text-muted); font-size: 14px; margin-top: 10px;">Receive the best property listings in Kamothe via WhatsApp.</p>
-    <input type="tel" id="leadPhone" placeholder="Enter Phone Number">
-    <button onclick="submitLead()" class="btn btn-primary" style="width: 100%;">Get Deals Now</button>
-    <p onclick="closePopup()" style="margin-top: 15px; cursor: pointer; font-size: 12px; color: var(--text-muted);">Maybe later</p>
+    <h3 style="color: var(--accent);">Property Enquiry</h3>
+    <p style="color: var(--text-muted); font-size: 14px; margin-top: 10px;">Looking for a home in Kamothe? We'll send you the best deals.</p>
+    <input type="tel" id="leadPhone" placeholder="Your Phone Number">
+    <button onclick="submitLead()" class="btn btn-primary" style="width: 100%;">Connect on WhatsApp</button>
+    <p onclick="closePopup()" style="margin-top: 15px; cursor: pointer; font-size: 12px; color: var(--text-muted);">Close</p>
   </div>
 </div>
 
 <script>
   function closePopup() { document.getElementById('leadPopup').style.display = 'none'; localStorage.setItem('iwin_pop', 'y'); }
-  
   function submitLead() {
     const p = document.getElementById('leadPhone').value;
-    if(p.length < 10) { alert("Please enter a valid phone number"); return; }
-    window.open(`https://wa.me/919870499334?text=Hi Iwin Enterprises, I am interested in property. Contact: ${p}`, '_blank');
+    if(p.length < 10) { alert("Enter a valid number"); return; }
+    window.open(`https://wa.me/919870499334?text=Interested in property listings. Contact: ${p}`, '_blank');
     closePopup();
   }
-
   window.onload = () => {
-    // Show popup after 4 seconds only if it's the user's first visit
     if(!localStorage.getItem('iwin_pop')) {
       setTimeout(() => { document.getElementById('leadPopup').style.display = 'flex'; }, 4000);
     }
